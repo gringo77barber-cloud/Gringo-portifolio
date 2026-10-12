@@ -3,35 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gringo Design & Dev | Agência de Engenharia Digital & UI/UX</title>
+    <title>Gringo Design & Dev | Sites Neon de Alta Performance</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome 6 Pro CDN -->
+    <!-- FontAwesome 6 CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter & Plus Jakarta Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
                     colors: {
-                        obsidian: {
+                        dark: {
                             DEFAULT: '#050508',
-                            card: '#0A0A10',
-                            panel: '#0E0E17',
-                            border: '#1A1A2A'
+                            card: '#0B0B12',
+                            panel: '#10101C',
+                            border: '#1F1F35'
                         },
-                        gold: {
-                            DEFAULT: '#D4AF37',
-                            light: '#F3E5AB',
-                            dark: '#AA7C11'
-                        },
-                        accent: {
-                            purple: '#7C3AED',
-                            cyan: '#06B6D4'
+                        neon: {
+                            gold: '#FFD700',
+                            cyan: '#00FFCC',
+                            pink: '#FF007F',
+                            purple: '#9D00FF',
+                            blue: '#00E5FF'
                         }
                     }
                 }
@@ -40,11 +35,22 @@
     </script>
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .gold-glow { box-shadow: 0 0 50px -15px rgba(212, 175, 55, 0.25); }
-        .purple-glow { box-shadow: 0 0 50px -15px rgba(124, 58, 237, 0.25); }
-        .glass-panel { background: rgba(10, 10, 16, 0.7); backdrop-filter: blur(16px); }
         
-        /* Drawer Transition */
+        /* Efeitos de Brilho Neon Forte */
+        .glow-gold { box-shadow: 0 0 35px -5px rgba(255, 215, 0, 0.4); }
+        .glow-cyan { box-shadow: 0 0 35px -5px rgba(0, 255, 204, 0.4); }
+        .glow-pink { box-shadow: 0 0 35px -5px rgba(255, 0, 127, 0.4); }
+        .glow-purple { box-shadow: 0 0 35px -5px rgba(157, 0, 255, 0.4); }
+        
+        .border-neon-gold { border-color: rgba(255, 215, 0, 0.6); }
+        .border-neon-cyan { border-color: rgba(0, 255, 204, 0.6); }
+        .border-neon-pink { border-color: rgba(255, 0, 127, 0.6); }
+
+        .text-glow-gold { text-shadow: 0 0 12px rgba(255, 215, 0, 0.8); }
+        .text-glow-cyan { text-shadow: 0 0 12px rgba(0, 255, 204, 0.8); }
+        .text-glow-pink { text-shadow: 0 0 12px rgba(255, 0, 127, 0.8); }
+
+        /* Drawer Slide-over */
         .drawer-overlay {
             opacity: 0;
             pointer-events: none;
@@ -63,280 +69,342 @@
         }
     </style>
 </head>
-<body class="bg-obsidian text-slate-100 antialiased selection:bg-gold selection:text-black">
+<body class="bg-dark text-slate-100 antialiased selection:bg-neon-cyan selection:text-black">
 
-    <!-- Header Executivo Fixo -->
-    <header class="fixed top-0 w-full glass-panel z-40 border-b border-obsidian-border">
+    <!-- Header Fixo com Neon -->
+    <header class="fixed top-0 w-full bg-dark/90 backdrop-blur-xl z-40 border-b border-dark-border">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="text-2xl font-black tracking-tighter text-white flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-gold animate-ping"></span>
-                GRINGO<span class="text-gold">.</span><span class="text-[10px] tracking-widest text-slate-400 font-bold uppercase block ml-1">DESIGN & DEV</span>
+                <span class="w-3.5 h-3.5 rounded-full bg-neon-cyan animate-ping"></span>
+                GRINGO<span class="text-neon-cyan text-glow-cyan">.</span><span class="text-[10px] tracking-widest text-neon-gold font-bold uppercase block ml-1 text-glow-gold">DESIGN & DEV</span>
             </a>
             
-            <nav class="hidden lg:flex space-x-10 font-semibold text-xs tracking-widest text-slate-300 uppercase">
-                <a href="#servicos" class="hover:text-gold transition">Serviços</a>
-                <a href="#portfolio" class="hover:text-gold transition">Portfólio</a>
-                <a href="#engenharia" class="hover:text-gold transition">Engenharia</a>
-                <a href="#diferenciais" class="hover:text-gold transition">Métricas</a>
+            <nav class="hidden lg:flex space-x-8 font-extrabold text-xs tracking-widest text-slate-200 uppercase">
+                <a href="#nichos" class="hover:text-neon-cyan transition">Nichos de Sites</a>
+                <a href="#servicos" class="hover:text-neon-gold transition">O Que Criamos</a>
+                <a href="#engenharia" class="hover:text-neon-pink transition">Tecnologia</a>
             </nav>
 
-            <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gringo%20e%20gostaria%20de%20solicitar%20uma%20reuni%C3%A3o%20estrat%C3%A9gica." target="_blank" class="bg-gradient-to-r from-gold via-gold-light to-gold-dark text-black font-extrabold px-6 py-3 rounded-xl hover:opacity-95 transition text-xs tracking-wider uppercase shadow-xl shadow-gold/20 flex items-center gap-2.5">
-                <i class="fa-brands fa-whatsapp text-sm"></i> Falar com Sócio ↗
+            <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Vi%20o%20site%20neon%20da%20Gringo%20e%20quero%20um%20projeto%20para%20o%20meu%20neg%C3%B3cio." target="_blank" class="bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-pink text-black font-black px-6 py-3 rounded-xl hover:scale-105 transition duration-300 text-xs tracking-wider uppercase shadow-lg shadow-neon-cyan/20 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Rápido ↗
             </a>
         </div>
     </header>
 
-    <!-- Hero Section de Alto Impacto -->
-    <section class="pt-44 pb-28 px-6 max-w-7xl mx-auto flex flex-col items-center text-center space-y-8 relative">
-        <div class="inline-flex items-center gap-2.5 bg-obsidian-card border border-gold/30 text-gold text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-inner">
-            <i class="fa-solid fa-shield-halved text-gold animate-pulse"></i> Desenvolvimento Web & Mobile de Elite
+    <!-- Hero Section Agressiva & Neon -->
+    <section class="pt-44 pb-24 px-6 max-w-7xl mx-auto flex flex-col items-center text-center space-y-8 relative">
+        <div class="inline-flex items-center gap-2.5 bg-dark-card border border-neon-cyan/60 text-neon-cyan text-xs font-black px-5 py-2.5 rounded-full uppercase tracking-widest glow-cyan">
+            <i class="fa-solid fa-bolt text-neon-gold animate-bounce"></i> Websites Prontos para Vender Todos os Dias
         </div>
         
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight max-w-5xl leading-none">
-            Construímos a <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-100 to-accent-purple">Presença Digital</span> dos Líderes de Mercado.
+            Criamos <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-pink text-glow-gold">Sites de Elite</span> para o Seu Negócio Decolar.
         </h1>
         
-        <p class="text-slate-400 text-lg md:text-xl font-normal max-w-3xl leading-relaxed">
-            Especialistas em engenharia de software de alta performance, design de interfaces exclusivas e ecossistemas digitais criados para gerar autoridade imediata.
+        <p class="text-slate-300 text-lg md:text-xl font-medium max-w-3xl leading-relaxed">
+            Especialistas em páginas para Barbearias, Salões de Beleza, Manicures, Estética, Lanchonetes e Profissionais Autônomos. Design agressivo, carregamento instantâneo e botão de agendamento no WhatsApp.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-5 w-full justify-center pt-4">
-            <a href="#servicos" class="bg-gradient-to-r from-gold to-gold-dark text-black font-extrabold px-9 py-4.5 rounded-xl hover:opacity-90 transition tracking-wider text-xs uppercase shadow-xl shadow-gold/20 flex items-center justify-center gap-3">
-                <i class="fa-solid fa-list-check"></i> Explorar Capacidades
+            <a href="#nichos" class="bg-gradient-to-r from-neon-cyan to-neon-blue text-black font-black px-9 py-4.5 rounded-xl hover:scale-105 transition tracking-wider text-xs uppercase shadow-xl shadow-neon-cyan/30 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-store"></i> VER MODELOS POR NICHO
             </a>
-            <a href="https://wa.me/5561981778756?text=Quero%20um%20diagn%C3%B3stico%20gratuito%20do%20meu%20projeto." target="_blank" class="border border-obsidian-border bg-obsidian-card hover:border-gold/50 text-slate-200 font-bold px-9 py-4.5 rounded-xl transition tracking-wider text-xs uppercase flex items-center justify-center gap-3">
-                <i class="fa-brands fa-whatsapp text-gold"></i> Diagnóstico WhatsApp
+            <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." target="_blank" class="border-2 border-neon-pink bg-dark-card text-neon-pink font-black px-9 py-4.5 rounded-xl hover:bg-neon-pink hover:text-black transition tracking-wider text-xs uppercase shadow-lg shadow-neon-pink/20 flex items-center justify-center gap-3">
+                <i class="fa-brands fa-whatsapp text-lg"></i> PONTAPÉ INICIAL NO WHATSAPP
             </a>
         </div>
     </section>
 
-    <!-- Secção de Serviços com Painel Interativo (Drawer) -->
-    <section id="servicos" class="py-28 bg-obsidian-card/40 border-t border-obsidian-border px-6">
+    <!-- NOVA SEÇÃO: Nichos de Mercado (Barbearia, Manicure, Salão, Estética, etc) -->
+    <section id="nichos" class="py-24 bg-dark-card/60 border-t border-dark-border px-6">
         <div class="max-w-7xl mx-auto space-y-16">
             <div class="text-center space-y-4 max-w-3xl mx-auto">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-gold flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-microchip"></i> Soluções de Engenharia & Design
+                <span class="text-xs font-black uppercase tracking-widest text-neon-gold text-glow-gold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-fire"></i> Modelos Prontos para Alta Conversão
                 </span>
-                <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">Especialidades Executivas</h2>
-                <p class="text-slate-400 text-sm">Clique em qualquer pilar abaixo para abrir a ficha técnica detalhada com escopo, prazos e entregáveis.</p>
+                <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">Qual é o Seu Nicho?</h2>
+                <p class="text-slate-300 text-sm">Desenvolvemos a estrutura perfeita com tabela de preços, galeria de fotos, localização e agendamento direto pelo WhatsApp.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1: Web Applications -->
-                <div onclick="openDrawer('drawer-web')" class="cursor-pointer group bg-obsidian-card border border-obsidian-border p-9 rounded-3xl hover:border-gold transition-all duration-500 gold-glow relative overflow-hidden flex flex-col justify-between">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Nicho 1: Barbearia -->
+                <div class="bg-dark border border-neon-gold/50 rounded-3xl overflow-hidden group hover:border-neon-gold transition duration-500 glow-gold flex flex-col justify-between">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold text-3xl font-bold mb-8 group-hover:scale-110 transition duration-300">
-                            <i class="fa-solid fa-code text-gold animate-pulse"></i>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1000&auto=format&fit=crop" alt="Site para Barbearia" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-black/90 text-neon-gold border border-neon-gold/50 text-[10px] font-black px-3 py-1.5 rounded-full uppercase">💈 Barbearia & Corte</span>
                         </div>
-                        <h3 class="text-2xl font-black text-white mb-3">Plataformas Web & Software</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Aplicações web rápidas, responsivas e integradas a gateways de pagamento e APIs avançadas.</p>
+                        <div class="p-7 space-y-3">
+                            <h3 class="text-2xl font-black text-white">Sites para Barbearias</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Apresente os cortes, combos de barba, localização com mapa e botão direto de "Agendar Horário" no WhatsApp dos seus barbeiros.
+                            </p>
+                        </div>
                     </div>
-                    <div class="pt-6 border-t border-obsidian-border flex items-center justify-between text-xs font-bold text-gold uppercase tracking-wider">
-                        <span>Ver Ficha Técnica</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    <div class="p-7 pt-0">
+                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Barbearia." target="_blank" class="block text-center bg-neon-gold text-black font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">
+                            Quero para minha Barbearia ↗
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 2: Mobile Apps & UI/UX -->
-                <div onclick="openDrawer('drawer-mobile')" class="cursor-pointer group bg-obsidian-card border border-obsidian-border p-9 rounded-3xl hover:border-accent-purple transition-all duration-500 purple-glow relative overflow-hidden flex flex-col justify-between">
+                <!-- Nicho 2: Manicure & Nails -->
+                <div class="bg-dark border border-neon-pink/50 rounded-3xl overflow-hidden group hover:border-neon-pink transition duration-500 glow-pink flex flex-col justify-between">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center text-accent-purple text-3xl font-bold mb-8 group-hover:scale-110 transition duration-300">
-                            <i class="fa-solid fa-mobile-screen-button animate-bounce"></i>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1000&auto=format&fit=crop" alt="Site para Manicure e Nail Designer" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-black/90 text-neon-pink border border-neon-pink/50 text-[10px] font-black px-3 py-1.5 rounded-full uppercase">💅 Manicure & Nails</span>
                         </div>
-                        <h3 class="text-2xl font-black text-white mb-3">Aplicativos & UI/UX Design</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Design de sistemas mobile intuitivos com prototipagem de alta fidelidade e arquitetura de usuário.</p>
+                        <div class="p-7 space-y-3">
+                            <h3 class="text-2xl font-black text-white">Manicures & Nail Designers</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Galeria de fotos de Alongamentos, Gel, Fibra e Esmaltação, tabela de serviços e catálogo online completo para encantar clientes.
+                            </p>
+                        </div>
                     </div>
-                    <div class="pt-6 border-t border-obsidian-border flex items-center justify-between text-xs font-bold text-accent-purple uppercase tracking-wider">
-                        <span>Ver Ficha Técnica</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    <div class="p-7 pt-0">
+                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Manicure%20e%20Nails." target="_blank" class="block text-center bg-neon-pink text-white font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">
+                            Quero para meu Espaço Nails ↗
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 3: Branding & Identity -->
-                <div onclick="openDrawer('drawer-branding')" class="cursor-pointer group bg-obsidian-card border border-obsidian-border p-9 rounded-3xl hover:border-gold transition-all duration-500 gold-glow relative overflow-hidden flex flex-col justify-between">
+                <!-- Nicho 3: Salão de Cabeleireiro & Estética -->
+                <div class="bg-dark border border-neon-cyan/50 rounded-3xl overflow-hidden group hover:border-neon-cyan transition duration-500 glow-cyan flex flex-col justify-between">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold text-3xl font-bold mb-8 group-hover:scale-110 transition duration-300">
-                            <i class="fa-solid fa-vector-square animate-spin"></i>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop" alt="Site para Salão de Beleza" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-black/90 text-neon-cyan border border-neon-cyan/50 text-[10px] font-black px-3 py-1.5 rounded-full uppercase">✂️ Salão & Estética</span>
                         </div>
-                        <h3 class="text-2xl font-black text-white mb-3">Identidade Visual & Branding</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Posicionamento de marca agressivo com manuais de identidade visual, logotipos e direção de arte.</p>
+                        <div class="p-7 space-y-3">
+                            <h3 class="text-2xl font-black text-white">Salões de Cabelo & Beleza</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Destaque mechas, coloração, tratamentos capilares, depoimentos de clientes e agendamentos simplificados no WhatsApp.
+                            </p>
+                        </div>
                     </div>
-                    <div class="pt-6 border-t border-obsidian-border flex items-center justify-between text-xs font-bold text-gold uppercase tracking-wider">
-                        <span>Ver Ficha Técnica</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    <div class="p-7 pt-0">
+                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Salao%20de%20Beleza." target="_blank" class="block text-center bg-neon-cyan text-black font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">
+                            Quero para meu Salão ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nicho 4: Estúdio de Tatuagem & Piercing -->
+                <div class="bg-dark border border-neon-purple/50 rounded-3xl overflow-hidden group hover:border-neon-purple transition duration-500 glow-purple flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?q=80&w=1000&auto=format&fit=crop" alt="Site para Estúdio de Tatuagem" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-black/90 text-neon-purple border border-neon-purple/50 text-[10px] font-black px-3 py-1.5 rounded-full uppercase">🎨 Tatuagem & Piercing</span>
+                        </div>
+                        <div class="p-7 space-y-3">
+                            <h3 class="text-2xl font-black text-white">Estúdios de Tattoo</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Portfólio de artes em alta definição, estilos (Realismo, Fine Line, Old School) e formulário rápido de orçamento por arte.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-7 pt-0">
+                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Estudio%20de%20Tatuagem." target="_blank" class="block text-center bg-neon-purple text-white font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">
+                            Quero para meu Estúdio ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nicho 5: Hamburguerias, Lanchonetes e Gastronomia -->
+                <div class="bg-dark border border-neon-gold/50 rounded-3xl overflow-hidden group hover:border-neon-gold transition duration-500 glow-gold flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1000&auto=format&fit=crop" alt="Site para Hamburgueria e Lanchonete" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-black/90 text-neon-gold border border-neon-gold/50 text-[10px] font-black px-3 py-1.5 rounded-full uppercase">🍔 Gastronomia & Delivery</span>
+                        </div>
+                        <div class="p-7 space-y-3">
+                            <h3 class="text-2xl font-black text-white">Hamburguerias & Delivery</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Cardápio digital interativo com fotos suculentas, bebidas, combos e pedido automático enviado no WhatsApp da cozinha.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-7 pt-0">
+                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Cardapio%20Hamburgueria." target="_blank" class="block text-center bg-neon-gold text-black font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">
+                            Quero Cardápio Digital ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nicho 6: Consultorias, Personal e Autônomos -->
+                <div class="bg-dark border border-neon-cyan/50 rounded-3xl overflow-hidden group hover:border-neon-cyan transition duration-500 glow-cyan flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop" alt="Site para Personal Trainer e Profissionais" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-black/90 text-neon-cyan border border-neon-cyan/50 text-[10px] font-black px-3 py-1.5 rounded-full uppercase">💪 Personal & Serviços</span>
+                        </div>
+                        <div class="p-7 space-y-3">
+                            <h3 class="text-2xl font-black text-white">Personal & Autônomos</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Apresentação profissional com plano de consultorias, resultados de alunos, depoimentos e agendamento de avaliação.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-7 pt-0">
+                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Personal%20e%20Consultoria." target="_blank" class="block text-center bg-neon-cyan text-black font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">
+                            Quero para meus Serviços ↗
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Galeria de Portfólio Real & Projetos -->
-    <section id="portfolio" class="py-28 px-6 max-w-7xl mx-auto space-y-16">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-                <span class="text-xs font-extrabold uppercase tracking-widest text-gold flex items-center gap-2">
-                    <i class="fa-solid fa-briefcase"></i> Casos Práticos
-                </span>
-                <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight mt-1">Ambiente de Produção</h2>
-            </div>
-            <p class="text-slate-400 text-sm max-w-md">Fotos reais das metodologias e ambientes onde desenvolvemos o código e os protótipos de nossos clientes.</p>
+    <!-- Secção de Serviços Interativos (Toque para Abrir Ficha Técnica) -->
+    <section id="servicos" class="py-24 px-6 max-w-7xl mx-auto space-y-16">
+        <div class="text-center space-y-4 max-w-3xl mx-auto">
+            <span class="text-xs font-black uppercase tracking-widest text-neon-cyan text-glow-cyan flex items-center justify-center gap-2">
+                <i class="fa-solid fa-layer-group"></i> Interatividade Total
+            </span>
+            <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">O Que Incluímos nos Projetos</h2>
+            <p class="text-slate-300 text-sm">Toque nos cards para ver as especificações e o que entregamos em cada serviço.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Caso 1 -->
-            <div class="bg-obsidian-card border border-obsidian-border rounded-3xl overflow-hidden group hover:border-gold/50 transition duration-500">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" alt="Desenvolvimento Web" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-card via-transparent to-transparent"></div>
-                    <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-gold text-[10px] font-black px-3 py-1.5 rounded-full border border-gold/30 uppercase">Web Engineering</span>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div onclick="openDrawer('drawer-web')" class="cursor-pointer group bg-dark-card border border-neon-gold/40 p-8 rounded-3xl hover:border-neon-gold transition duration-300 glow-gold flex flex-col justify-between">
+                <div>
+                    <div class="w-16 h-16 rounded-2xl bg-neon-gold/10 border border-neon-gold/30 flex items-center justify-center text-neon-gold text-3xl font-bold mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-desktop animate-pulse"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-white mb-2">Websites de Alta Conversão</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Páginas ultra-rápidas otimizadas para telemóveis e focadas em fechar clientes no WhatsApp.</p>
                 </div>
-                <div class="p-8 space-y-3">
-                    <h4 class="text-xl font-bold text-white">Sistemas Web & APIs</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">Construção de código otimizado em HTML5, CSS3, Tailwind e estruturas escaláveis para alta demanda.</p>
-                </div>
-            </div>
-
-            <!-- Caso 2 -->
-            <div class="bg-obsidian-card border border-obsidian-border rounded-3xl overflow-hidden group hover:border-accent-purple/50 transition duration-500">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop" alt="UI UX Design Studio" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-card via-transparent to-transparent"></div>
-                    <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-accent-purple text-[10px] font-black px-3 py-1.5 rounded-full border border-accent-purple/30 uppercase">UI/UX Studio</span>
-                </div>
-                <div class="p-8 space-y-3">
-                    <h4 class="text-xl font-bold text-white">Estúdio de Design de Interfaces</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">Criação de jornadas de usuário com arquitetura intuitiva e foco total na conversão de leads.</p>
+                <div class="pt-6 border-t border-dark-border text-xs font-black text-neon-gold uppercase flex items-center justify-between">
+                    <span>Ver Ficha Técnica</span>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </div>
             </div>
 
-            <!-- Caso 3 -->
-            <div class="bg-obsidian-card border border-obsidian-border rounded-3xl overflow-hidden group hover:border-gold/50 transition duration-500">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1000&auto=format&fit=crop" alt="Branding Executivo" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-card via-transparent to-transparent"></div>
-                    <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-gold text-[10px] font-black px-3 py-1.5 rounded-full border border-gold/30 uppercase">Branding & Identity</span>
+            <div onclick="openDrawer('drawer-mobile')" class="cursor-pointer group bg-dark-card border border-neon-pink/40 p-8 rounded-3xl hover:border-neon-pink transition duration-300 glow-pink flex flex-col justify-between">
+                <div>
+                    <div class="w-16 h-16 rounded-2xl bg-neon-pink/10 border border-neon-pink/30 flex items-center justify-center text-neon-pink text-3xl font-bold mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-mobile-screen-button animate-bounce"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-white mb-2">Apps & Cardápios Digitais</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Sistemas interativos e catálogos no telemóvel para facilitação de pedidos e agendamentos.</p>
                 </div>
-                <div class="p-8 space-y-3">
-                    <h4 class="text-xl font-bold text-white">Direção de Arte & Branding</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">Desenvolvimento de identidade de marcas de alto luxo, incluindo tipografia personalizada e manuais.</p>
+                <div class="pt-6 border-t border-dark-border text-xs font-black text-neon-pink uppercase flex items-center justify-between">
+                    <span>Ver Ficha Técnica</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <div onclick="openDrawer('drawer-branding')" class="cursor-pointer group bg-dark-card border border-neon-cyan/40 p-8 rounded-3xl hover:border-neon-cyan transition duration-300 glow-cyan flex flex-col justify-between">
+                <div>
+                    <div class="w-16 h-16 rounded-2xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center text-neon-cyan text-3xl font-bold mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-palette animate-spin"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-white mb-2">Logotipos & Arte Digital</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Criação de marcas marcantes, banners neon e artes para redes sociais que chamam atenção de longe.</p>
+                </div>
+                <div class="pt-6 border-t border-dark-border text-xs font-black text-neon-cyan uppercase flex items-center justify-between">
+                    <span>Ver Ficha Técnica</span>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Transparência de Engenharia: Como Este Site Funciona -->
-    <section id="engenharia" class="py-28 bg-obsidian-panel border-t border-b border-obsidian-border px-6">
-        <div class="max-w-6xl mx-auto space-y-16">
-            <div class="text-center space-y-4">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-gold flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-terminal"></i> Engenharia em Ação
-                </span>
-                <h2 class="text-3xl md:text-5xl font-black text-white">Arquitetura Técnica Deste Site</h2>
-                <p class="text-slate-400 text-sm max-w-xl mx-auto">Demonstração de transparência: entenda como a infraestrutura da Gringo Design & Dev é configurada.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-obsidian-card border border-obsidian-border p-8 rounded-3xl space-y-4">
-                    <div class="flex items-center gap-3 text-gold text-xl font-bold">
-                        <i class="fa-brands fa-github text-2xl"></i> Repositório & Controle de Versão
+    <!-- Transparência da Engenharia do Próprio Site -->
+    <section id="engenharia" class="py-24 bg-dark-panel border-t border-b border-dark-border px-6">
+        <div class="max-w-6xl mx-auto space-y-12 text-center">
+            <span class="text-xs font-black uppercase tracking-widest text-neon-gold text-glow-gold">Tecnologia de Ponta</span>
+            <h2 class="text-3xl md:text-5xl font-black text-white">Por Que Nossos Sites Carregam Tão Rápido?</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="bg-dark border border-dark-border p-8 rounded-3xl space-y-3 border-neon-cyan/30">
+                    <div class="text-neon-cyan font-black text-xl flex items-center gap-2">
+                        <i class="fa-solid fa-gauge-high"></i> HTML5 + Tailwind CSS Puro
                     </div>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Todo o código-fonte está hospedado no repositório privado do GitHub. Cada atualização no código dispara uma integração contínua (CI/CD) automatizada para os servidores globais.
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Não usamos plataformas pesadas e lentas. Escrevemos código leve e limpo para que seu cliente abra o site instantaneamente no 4G ou 5G.
                     </p>
                 </div>
 
-                <div class="bg-obsidian-card border border-obsidian-border p-8 rounded-3xl space-y-4">
-                    <div class="flex items-center gap-3 text-gold text-xl font-bold">
-                        <i class="fa-solid fa-cloud-bolt text-2xl"></i> Netlify Edge CDN & Performance
+                <div class="bg-dark border border-dark-border p-8 rounded-3xl space-y-3 border-neon-gold/30">
+                    <div class="text-neon-gold font-black text-xl flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> Integração Direta no WhatsApp
                     </div>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Deploy automatizado via **Netlify Edge CDN** com certificados de segurança SSL ativos, garantindo um tempo de resposta de milissegundos em qualquer lugar do planeta.
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Quando o cliente clica para agendar um corte ou serviço, ele abre a conversa no WhatsApp já com a mensagem personalizada pronta!
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé & Chamada de Negócios -->
-    <footer class="bg-black py-28 px-6 text-center border-t border-obsidian-border">
+    <!-- Rodapé Neon -->
+    <footer class="bg-black py-24 px-6 text-center border-t border-dark-border">
         <div class="max-w-4xl mx-auto space-y-8">
-            <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight">Pronto para elevar o padrão da sua empresa?</h2>
-            <p class="text-slate-400 max-w-xl mx-auto text-base">Entre em contato diretamente com nossa equipe executiva e receba uma proposta personalizada em menos de 2 horas.</p>
-            <div class="pt-4">
-                <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20para%20desenvolver%20meu%20projeto." target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-gold via-gold-light to-gold-dark text-black font-extrabold text-sm px-10 py-5 rounded-2xl hover:opacity-95 transition shadow-2xl shadow-gold/30 uppercase tracking-wider">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> Solicitar Reunião Executiva ↗
+            <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight">Pronto para colocar sua marca no ar?</h2>
+            <p class="text-slate-300 max-w-xl mx-auto text-sm">Fale diretamente com o fundador pelo WhatsApp e receba um orçamento sem compromisso.</p>
+            <div>
+                <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Quero%20criar%20o%20site%20do%20meu%20negocio%20com%20a%20Gringo." target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-pink text-black font-black text-sm px-10 py-5 rounded-2xl hover:scale-105 transition shadow-2xl shadow-neon-cyan/30 uppercase tracking-wider">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> SOLICITAR SITE NO WHATSAPP ↗
                 </a>
             </div>
-            <p class="text-xs text-slate-600 pt-16">© 2026 Gringo Design & Dev. Todos os direitos reservados. Hospedado via Netlify CDN.</p>
+            <p class="text-xs text-slate-600 pt-12">© 2026 Gringo Design & Dev. Todos os direitos reservados. Servidores Netlify CDN.</p>
         </div>
     </footer>
 
-    <!-- DRAWER LATERAL SLIDE-OVER (FICHAS TÉCNICAS) -->
-
-    <!-- Overlay Global -->
+    <!-- DRAWER LATERAL SLIDE-OVER -->
     <div id="drawer-overlay" class="drawer-overlay fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex justify-end">
         
-        <!-- Content 1: Web -->
-        <div id="drawer-web" class="drawer-content hidden bg-obsidian-panel border-l border-gold/40 w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+        <div id="drawer-web" class="drawer-content hidden bg-dark-panel border-l border-neon-gold w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
             <div class="space-y-6">
-                <div class="flex items-center justify-between border-b border-obsidian-border pb-6">
-                    <span class="text-gold font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                        <i class="fa-solid fa-code"></i> Ficha Técnica
-                    </span>
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-gold font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-code"></i> Ficha Técnica</span>
                     <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <h3 class="text-3xl font-black text-white">Engenharia Web & Software</h3>
-                <p class="text-slate-300 text-sm leading-relaxed">Desenvolvimento focado em estabilidade, SEO e carregamento veloz.</p>
-                <div class="space-y-4 border-t border-obsidian-border pt-6 text-sm text-slate-300">
-                    <div class="flex items-center justify-between"><span class="text-slate-400">Prazo Médio:</span> <span class="font-bold text-white">5 a 10 dias úteis</span></div>
-                    <div class="flex items-center justify-between"><span class="text-slate-400">Tecnologias:</span> <span class="font-bold text-gold">HTML5, Tailwind, JS, REST APIs</span></div>
-                    <div class="flex items-center justify-between"><span class="text-slate-400">Entrega:</span> <span class="font-bold text-white">100% Código Fonte + Hospedagem</span></div>
+                <h3 class="text-3xl font-black text-white">Websites para Negócios</h3>
+                <p class="text-slate-300 text-sm">Ideal para Barbearias, Salões, Manicures, Tatuadores e Lanchonetes.</p>
+                <div class="space-y-3 border-t border-dark-border pt-6 text-xs text-slate-300">
+                    <div class="flex justify-between"><span class="text-slate-400">Prazo de Entrega:</span> <span class="font-bold text-white">3 a 7 dias úteis</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Recursos:</span> <span class="font-bold text-neon-gold">Galeria, Tabela de Preços, Localização, Botão WhatsApp</span></div>
                 </div>
             </div>
-            <a href="https://wa.me/5561981778756?text=Quero%20or%C3%A7amento%20para%20Desenvolvimento%20Web." target="_blank" class="block text-center bg-gold text-black font-extrabold py-4 rounded-xl uppercase tracking-wider text-xs">Solicitar Proposta no WhatsApp</a>
+            <a href="https://wa.me/5561981778756?text=Quero%20or%C3%A7amento%20de%20Website." target="_blank" class="block text-center bg-neon-gold text-black font-black py-4 rounded-xl uppercase text-xs">Chamar no WhatsApp</a>
         </div>
 
-        <!-- Content 2: Mobile -->
-        <div id="drawer-mobile" class="drawer-content hidden bg-obsidian-panel border-l border-accent-purple/40 w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+        <div id="drawer-mobile" class="drawer-content hidden bg-dark-panel border-l border-neon-pink w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
             <div class="space-y-6">
-                <div class="flex items-center justify-between border-b border-obsidian-border pb-6">
-                    <span class="text-accent-purple font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                        <i class="fa-solid fa-mobile-screen-button"></i> Ficha Técnica
-                    </span>
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-pink font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-mobile-screen"></i> Ficha Técnica</span>
                     <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <h3 class="text-3xl font-black text-white">Aplicativos & UI/UX Design</h3>
-                <p class="text-slate-300 text-sm leading-relaxed">Criação de aplicativos nativos e híbridos com prototipagem detalhada.</p>
-                <div class="space-y-4 border-t border-obsidian-border pt-6 text-sm text-slate-300">
-                    <div class="flex items-center justify-between"><span class="text-slate-400">Prazo Médio:</span> <span class="font-bold text-white">10 a 20 dias úteis</span></div>
-                    <div class="flex items-center justify-between"><span class="text-slate-400">Tecnologias:</span> <span class="font-bold text-accent-purple">Figma, Flutter, PWA</span></div>
-                </div>
+                <h3 class="text-3xl font-black text-white">Apps & Cardápios Digitais</h3>
+                <p class="text-slate-300 text-sm">Sistemas interativos e catálogos para celulares.</p>
             </div>
-            <a href="https://wa.me/5561981778756?text=Quero%20or%C3%A7amento%20para%20Aplicativo." target="_blank" class="block text-center bg-accent-purple text-white font-extrabold py-4 rounded-xl uppercase tracking-wider text-xs">Solicitar Proposta no WhatsApp</a>
+            <a href="https://wa.me/5561981778756?text=Quero%20or%C3%A7amento%20de%20Cardapio/App." target="_blank" class="block text-center bg-neon-pink text-white font-black py-4 rounded-xl uppercase text-xs">Chamar no WhatsApp</a>
         </div>
 
-        <!-- Content 3: Branding -->
-        <div id="drawer-branding" class="drawer-content hidden bg-obsidian-panel border-l border-gold/40 w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+        <div id="drawer-branding" class="drawer-content hidden bg-dark-panel border-l border-neon-cyan w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
             <div class="space-y-6">
-                <div class="flex items-center justify-between border-b border-obsidian-border pb-6">
-                    <span class="text-gold font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                        <i class="fa-solid fa-vector-square"></i> Ficha Técnica
-                    </span>
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-cyan font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-palette"></i> Ficha Técnica</span>
                     <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <h3 class="text-3xl font-black text-white">Identidade Visual & Branding</h3>
-                <p class="text-slate-300 text-sm leading-relaxed">Projetos de posicionamento de marca e identidade completa.</p>
-                <div class="space-y-4 border-t border-obsidian-border pt-6 text-sm text-slate-300">
-                    <div class="flex items-center justify-between"><span class="text-slate-400">Prazo Médio:</span> <span class="font-bold text-white">3 a 7 dias úteis</span></div>
-                    <div class="flex items-center justify-between"><span class="text-slate-400">Entregáveis:</span> <span class="font-bold text-gold">Logotipos, Manual de Marca, Social Media</span></div>
-                </div>
+                <h3 class="text-3xl font-black text-white">Identidade Visual & Logos</h3>
+                <p class="text-slate-300 text-sm">Criação de marcas marcantes em neon e vetores profissionais.</p>
             </div>
-            <a href="https://wa.me/5561981778756?text=Quero%20or%C3%A7amento%20para%20Branding." target="_blank" class="block text-center bg-gold text-black font-extrabold py-4 rounded-xl uppercase tracking-wider text-xs">Solicitar Proposta no WhatsApp</a>
+            <a href="https://wa.me/5561981778756?text=Quero%20or%C3%A7amento%20de%20Logo/Design." target="_blank" class="block text-center bg-neon-cyan text-black font-black py-4 rounded-xl uppercase text-xs">Chamar no WhatsApp</a>
         </div>
 
     </div>
 
-    <!-- JavaScript para Controle dos Drawers Slide-over -->
+    <!-- JavaScript para Drawers -->
     <script>
         function openDrawer(drawerId) {
             const overlay = document.getElementById('drawer-overlay');
