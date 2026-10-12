@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gringo Design & Dev | Sites, Apps & Arte Digital</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#FFD700',
+                            dark: '#0D0D0D',
+                            card: '#18181B',
+                            accent: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md z-50 border-b border-zinc-800">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-wider text-white">
+                GRINGO<span class="text-brand-gold">.</span><span class="text-xs tracking-normal block text-gray-400 font-semibold">DESIGN & DEV</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 font-semibold text-sm text-gray-300">
+                <a href="#projetos" class="hover:text-brand-gold transition">PROJETOS</a>
+                <a href="#servicos" class="hover:text-brand-gold transition">SERVIÇOS</a>
+            </nav>
+            <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" class="bg-brand-gold text-black font-extrabold px-5 py-2.5 rounded-full hover:bg-yellow-400 transition text-sm flex items-center gap-2">
+                SOLICITAR ORÇAMENTO ↗
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-20 px-6 max-w-6xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="md:w-3/5 space-y-6">
+            <div class="inline-block bg-zinc-800/80 border border-brand-gold/30 text-brand-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
+                ● Design & Desenvolvimento de Elite
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">
+                Transformo ideias em <span class="text-brand-gold">experiências digitais</span> de alto impacto.
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl font-normal leading-relaxed">
+                Criação de websites modernos, aplicativos e artes digitais focados em presença de marca e conversão de clientes.
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#projetos" class="bg-brand-gold text-black font-extrabold px-8 py-4 rounded-xl hover:bg-yellow-400 transition text-center">
+                    VER PORTFÓLIO
+                </a>
+                <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" class="border border-zinc-700 bg-zinc-900/50 hover:bg-zinc-800 text-white font-bold px-8 py-4 rounded-xl transition text-center">
+                    CONVERSAR NO WHATSAPP
+                </a>
+            </div>
+        </div>
+        <div class="md:w-2/5 w-full">
+            <div class="bg-gradient-to-tr from-brand-gold/20 to-transparent p-1 rounded-3xl border border-zinc-800">
+                <div class="bg-brand-card p-8 rounded-[22px] space-y-6 text-left">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-xl">⚡</div>
+                        <div>
+                            <h3 class="font-bold text-white">Performance & Design</h3>
+                            <p class="text-xs text-gray-400">100% Responsivo e Rápido</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-zinc-800 pt-4 space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Desenvolvimento:</span>
+                            <span class="text-white font-semibold">Web / Mobile</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Hospedagem:</span>
+                            <span class="text-white font-semibold">Netlify / Cloud</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Entrega:</span>
+                            <span class="text-brand-gold font-semibold">Projetos Ágeis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="py-20 bg-zinc-950 border-t border-zinc-900 px-6">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="text-center md:text-left space-y-2">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-gold">Projetos em Destaque</h2>
+                <p class="text-3xl md:text-4xl font-extrabold text-white">Trabalhos Selecionados</p>
+            </div>
+
+            <!-- Card do Projeto: Gringo Barber -->
+            <div class="bg-brand-card border border-zinc-800 rounded-3xl overflow-hidden grid md:grid-cols-2 gap-8 items-center p-8 md:p-12 hover:border-brand-gold/50 transition">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase bg-zinc-800 text-brand-gold px-3 py-1 rounded-md">Web Design & Catálogo</span>
+                    <h3 class="text-3xl font-extrabold text-white">Gringo Barber</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Plataforma interativa para atendimento de barbearia a domicílio no DF. Inclui catálogo visual de cortes, tabela de preços e agendamento direto via WhatsApp.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300 font-medium">
+                        <li class="flex items-center gap-2"><span class="text-
