@@ -3,124 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gringo Design & Dev | O Padrão de Elite em Sites & Apps</title>
-    <!-- Tailwind CSS via CDN -->
+    <title>Gringo Design & Dev | Elite Digital & Alta Performance</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
+                        elite: {
+                            dark: '#030305',
+                            card: '#0D0D12',
+                            border: '#22222F',
                             gold: '#F59E0B',
                             lightGold: '#FBBF24',
-                            dark: '#050505',
-                            card: '#121214',
-                            border: '#27272A'
+                            purple: '#8B5CF6'
                         }
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glow-effect {
-            box-shadow: 0 0 50px -10px rgba(245, 158, 11, 0.15);
+        .glow-gold { box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.25); }
+        .glow-purple { box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.25); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
+        .animate-float { animation: float 4s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-brand-dark text-gray-100 antialiased selection:bg-brand-gold selection:text-black">
+<body class="bg-elite-dark text-gray-100 antialiased selection:bg-elite-gold selection:text-black">
 
-    <!-- Header Fixo -->
-    <header class="fixed top-0 w-full bg-brand-dark/90 backdrop-blur-md z-50 border-b border-brand-border">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-black tracking-tighter text-white">
-                GRINGO<span class="text-brand-gold">.</span><span class="text-[10px] tracking-widest block text-gray-400 font-bold uppercase">Design & Dev</span>
+    <!-- Header Fixo Premium -->
+    <header class="fixed top-0 w-full bg-elite-dark/85 backdrop-blur-xl z-50 border-b border-elite-border">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-tighter text-white flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-elite-gold animate-bounce"><span></span></i> GRINGO<span class="text-elite-gold">.</span>
             </a>
             <nav class="hidden md:flex space-x-8 font-bold text-xs tracking-widest text-gray-300">
-                <a href="#portfolio" class="hover:text-brand-gold transition">PORTFÓLIO</a>
-                <a href="#servicos" class="hover:text-brand-gold transition">EXPERTISE</a>
-                <a href="#diferenciais" class="hover:text-brand-gold transition">O PADRÃO</a>
+                <a href="#portfolio" class="hover:text-elite-gold transition">PORTFÓLIO</a>
+                <a href="#expertise" class="hover:text-elite-gold transition">EXPERTISE</a>
+                <a href="#diferenciais" class="hover:text-elite-gold transition">O PADRÃO</a>
             </nav>
-            <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Vi%20o%20novo%20site%20e%20quero%20um%20projeto%20de%20elite." target="_blank" class="bg-brand-gold text-black font-extrabold px-5 py-2.5 rounded-xl hover:bg-brand-lightGold transition text-xs tracking-wider uppercase shadow-lg shadow-brand-gold/20 flex items-center gap-2">
-                Orçamento Rápido ↗
+            <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Quero%20um%20projeto%20de%20elite%20com%20a%20Gringo." target="_blank" class="bg-gradient-to-r from-elite-gold to-yellow-500 text-black font-extrabold px-5 py-2.5 rounded-xl hover:opacity-90 transition text-xs tracking-wider uppercase shadow-lg shadow-elite-gold/20 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp ↗
             </a>
         </div>
     </header>
 
     <!-- Hero Section Animalista -->
-    <section class="pt-44 pb-24 px-6 max-w-6xl mx-auto flex flex-col items-center text-center space-y-8">
-        <div class="inline-flex items-center gap-2 bg-brand-border/60 border border-brand-gold/30 text-brand-gold text-xs font-extrabold px-4 py-2 rounded-full uppercase tracking-widest">
-            <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span> Disponível para Novos Projetos
+    <section class="pt-44 pb-28 px-6 max-w-7xl mx-auto flex flex-col items-center text-center space-y-8">
+        <div class="inline-flex items-center gap-2 bg-elite-card border border-elite-gold/30 text-elite-gold text-xs font-extrabold px-4 py-2 rounded-full uppercase tracking-widest animate-float">
+            <i class="fa-solid fa-crown text-elite-gold"></i> Padrão Inquestionável de Mercado
         </div>
         
         <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight max-w-4xl leading-none">
-            Criamos o <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">topo da cadeia</span> digital.
+            Dominamos o <span class="text-transparent bg-clip-text bg-gradient-to-r from-elite-gold via-yellow-200 to-elite-purple">topo da cadeia</span> digital.
         </h1>
         
         <p class="text-gray-400 text-lg md:text-xl font-normal max-w-2xl leading-relaxed">
-            Websites de alta performance, aplicativos exclusivos e artes digitais agressivas para marcas que recusam ser apenas mais uma.
+            Criamos websites imersivos, aplicativos de alto desempenho e design estratégico para marcas que exigem respeito absoluto.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4">
-            <a href="#portfolio" class="bg-brand-gold text-black font-extrabold px-8.5 py-4 rounded-xl hover:bg-brand-lightGold transition tracking-wider text-sm shadow-xl shadow-brand-gold/20">
-                EXPLORAR TRABALHOS
+            <a href="#portfolio" class="bg-gradient-to-r from-elite-gold to-yellow-500 text-black font-extrabold px-8.5 py-4 rounded-xl hover:opacity-90 transition tracking-wider text-sm shadow-xl shadow-elite-gold/20 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-fire"></i> VER PORTFÓLIO
             </a>
-            <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Quero%20elevar%20o%20nível%20da%20minha%20marca." target="_blank" class="border border-brand-border bg-brand-card hover:border-brand-gold/50 text-white font-bold px-8.5 py-4 rounded-xl transition tracking-wider text-sm">
-                FALAR NO WHATSAPP
+            <a href="https://wa.me/5561981778756?text=Quero%20elevar%20o%20nivel%20da%20minha%20marca%20com%20a%20Gringo." target="_blank" class="border border-elite-border bg-elite-card hover:border-elite-gold/50 text-white font-bold px-8.5 py-4 rounded-xl transition tracking-wider text-sm flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-elite-gold"></i> FALAR COM ESPECIALISTA
             </a>
         </div>
     </section>
 
-    <!-- Vitrine de Portfólio com Imagens de Alta Qualidade -->
-    <section id="portfolio" class="py-24 bg-brand-card/40 border-t border-brand-border px-6">
-        <div class="max-w-6xl mx-auto space-y-16">
+    <!-- Vitrine de Portfólio Premium com Fotos Detalhadas -->
+    <section id="portfolio" class="py-28 bg-elite-card/30 border-t border-elite-border px-6">
+        <div class="max-w-7xl mx-auto space-y-16">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-gold">Galeria de Elite</span>
-                    <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight mt-1">Trabalhos com Presença Marcante</h2>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-elite-gold flex items-center gap-2">
+                        <i class="fa-solid fa-gem"></i> Galeria Exclusiva
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight mt-1">Trabalhos que Impressionam</h2>
                 </div>
-                <p class="text-gray-400 text-sm max-w-md">Cada pixel desenhado milimetricamente para gerar impacto visual imediato e conversão agressiva.</p>
+                <p class="text-gray-400 text-sm max-w-md">Cada projeto é construído do zero, combinando estética agressiva, usabilidade fluida e foco total em conversão.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Projeto 1: Web Design Imersivo -->
-                <div class="group relative bg-brand-card border border-brand-border rounded-3xl overflow-hidden hover:border-brand-gold/60 transition duration-300 glow-effect">
-                    <div class="h-64 overflow-hidden bg-zinc-900 relative">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="Web Design Imersivo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
-                        <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-brand-gold text-[10px] font-extrabold px-3 py-1 rounded-full uppercase border border-brand-gold/30">Web Design & Dev</span>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <div class="group relative bg-elite-card border border-elite-border rounded-3xl overflow-hidden hover:border-elite-gold/60 transition duration-500 glow-gold">
+                    <div class="h-60 overflow-hidden bg-zinc-950 relative">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop" alt="Web Design" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-75">
+                        <div class="absolute inset-0 bg-gradient-to-t from-elite-card via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-elite-gold text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase border border-elite-gold/30 flex items-center gap-1.5">
+                            <i class="fa-solid fa-laptop-code animate-pulse"></i> Web Design
+                        </span>
                     </div>
                     <div class="p-8 space-y-4">
-                        <h3 class="text-2xl font-black text-white">Plataformas Web de Alta Conversão</h3>
+                        <h3 class="text-2xl font-black text-white">Plataformas Web Imersivas</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Desenvolvimento focado em velocidade extrema, layouts escuros e modernos, otimizados perfeitamente para telemóveis.
+                            Desenvolvimento de sites de alta velocidade com transições suaves, dark mode sofisticado e conversão otimizada para telemóveis.
                         </p>
-                        <div class="pt-2 flex items-center justify-between">
-                            <span class="text-xs text-brand-gold font-bold">HTML5 / Tailwind / Netlify</span>
-                            <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20web%20design%20imersivo." target="_blank" class="text-white text-xs font-extrabold hover:text-brand-gold transition flex items-center gap-1">SOLICITAR SEMELHANTE ↗</a>
+                        <div class="pt-4 flex items-center justify-between border-t border-elite-border text-xs">
+                            <span class="text-elite-gold font-bold">Performance Extrema</span>
+                            <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20igual%20ao%20projeto%20web%20design." target="_blank" class="text-white font-extrabold hover:text-elite-gold transition flex items-center gap-1">PEDIR ORÇAMENTO ↗</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Projeto 2: Apps & Arte Digital -->
-                <div class="group relative bg-brand-card border border-brand-border rounded-3xl overflow-hidden hover:border-brand-gold/60 transition duration-300 glow-effect">
-                    <div class="h-64 overflow-hidden bg-zinc-900 relative">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="Arte Digital e Apps" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
-                        <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-brand-gold text-[10px] font-extrabold px-3 py-1 rounded-full uppercase border border-brand-gold/30">Apps & Arte Digital</span>
+                <!-- Projeto 2 -->
+                <div class="group relative bg-elite-card border border-elite-border rounded-3xl overflow-hidden hover:border-elite-purple/60 transition duration-500 glow-purple">
+                    <div class="h-60 overflow-hidden bg-zinc-950 relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Apps e UI/UX" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-75">
+                        <div class="absolute inset-0 bg-gradient-to-t from-elite-card via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-elite-purple text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase border border-elite-purple/30 flex items-center gap-1.5">
+                            <i class="fa-solid fa-mobile-screen-button animate-bounce"></i> Aplicativos
+                        </span>
                     </div>
                     <div class="p-8 space-y-4">
-                        <h3 class="text-2xl font-black text-white">Apps, Interfaces & Identidade Visual</h3>
+                        <h3 class="text-2xl font-black text-white">Apps & Interfaces UI/UX</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Criação de interfaces visuais disruptivas e artes digitais focadas em posicionamento de marcas de alto padrão.
+                            Projetos de aplicativos e painéis administrativos pensados milimetricamente para proporcionar uma experiência de uso viciante.
                         </p>
-                        <div class="pt-2 flex items-center justify-between">
-                            <span class="text-xs text-brand-gold font-bold">UI/UX / Branding / Mobile</span>
-                            <a href="https://wa.me/5561981778756?text=Quero%20um%20projeto%20de%20App%20ou%20Arte%20Digital." target="_blank" class="text-white text-xs font-extrabold hover:text-brand-gold transition flex items-center gap-1">SOLICITAR SEMELHANTE ↗</a>
+                        <div class="pt-4 flex items-center justify-between border-t border-elite-border text-xs">
+                            <span class="text-elite-purple font-bold">Design Disruptivo</span>
+                            <a href="https://wa.me/5561981778756?text=Quero%20desenvolver%20um%20App%20ou%20Interface." target="_blank" class="text-white font-extrabold hover:text-elite-purple transition flex items-center gap-1">PEDIR ORÇAMENTO ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="group relative bg-elite-card border border-elite-border rounded-3xl overflow-hidden hover:border-elite-gold/60 transition duration-500 glow-gold">
+                    <div class="h-60 overflow-hidden bg-zinc-950 relative">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="Arte Digital e Branding" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-75">
+                        <div class="absolute inset-0 bg-gradient-to-t from-elite-card via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-black/80 backdrop-blur-md text-elite-gold text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase border border-elite-gold/30 flex items-center gap-1.5">
+                            <i class="fa-solid fa-palette animate-spin"></i> Arte Digital
+                        </span>
+                    </div>
+                    <div class="p-8 space-y-4">
+                        <h3 class="text-2xl font-black text-white">Identidade Visual & Branding</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Criação de marcas marcantes, criativos de alto impacto e direção de arte agressiva para dominar as redes sociais.
+                        </p>
+                        <div class="pt-4 flex items-center justify-between border-t border-elite-border text-xs">
+                            <span class="text-elite-gold font-bold">Autoridade Máxima</span>
+                            <a href="https://wa.me/5561981778756?text=Quero%20criar%20minha%20Identidade%20Visual." target="_blank" class="text-white font-extrabold hover:text-elite-gold transition flex items-center gap-1">PEDIR ORÇAMENTO ↗</a>
                         </div>
                     </div>
                 </div>
@@ -128,43 +161,51 @@
         </div>
     </section>
 
-    <!-- Secção de Serviços / Pilares -->
-    <section id="servicos" class="py-24 px-6 max-w-6xl mx-auto space-y-16">
+    <!-- Expertise / Pilares com Ícones Animados -->
+    <section id="expertise" class="py-28 px-6 max-w-7xl mx-auto space-y-16">
         <div class="text-center space-y-3 max-w-2xl mx-auto">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-gold">Arsenal Completo</span>
-            <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">O Que Entregamos</h2>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-elite-gold flex items-center justify-center gap-2">
+                <i class="fa-solid fa-shield-halved"></i> Arsenal Técnico
+            </span>
+            <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">O Que Nos Torna Diferentes</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-brand-card border border-brand-border p-8 rounded-3xl space-y-4 hover:border-brand-gold/40 transition">
-                <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl font-bold">⚡</div>
-                <h3 class="text-xl font-bold text-white">Websites de Elite</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Sites rápidos, responsivos e projetados para impressionar qualquer cliente desde o primeiro clique.</p>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-elite-card border border-elite-border p-8 rounded-3xl space-y-5 hover:border-elite-gold/40 transition">
+                <div class="w-14 h-14 rounded-2xl bg-elite-gold/10 flex items-center justify-center text-elite-gold text-2xl font-bold animate-pulse">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">Velocidade Extrema</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Sites otimizados para carregar em milissegundos, garantindo que nenhum cliente desista antes de ver a tua oferta.</p>
             </div>
-            <div class="bg-brand-card border border-brand-border p-8 rounded-3xl space-y-4 hover:border-brand-gold/40 transition">
-                <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl font-bold">📱</div>
-                <h3 class="text-xl font-bold text-white">Aplicativos & UI</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Prototipagem e desenvolvimento de interfaces fluidas focadas em máxima usabilidade no telemóvel.</p>
+            <div class="bg-elite-card border border-elite-border p-8 rounded-3xl space-y-5 hover:border-elite-purple/40 transition">
+                <div class="w-14 h-14 rounded-2xl bg-elite-purple/10 flex items-center justify-center text-elite-purple text-2xl font-bold animate-bounce">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">Design Imersivo</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Estética escura e sofisticada com efeitos visuais marcantes que transmitem valor de um produto luxuoso e exclusivo.</p>
             </div>
-            <div class="bg-brand-card border border-brand-border p-8 rounded-3xl space-y-4 hover:border-brand-gold/40 transition">
-                <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl font-bold">🎨</div>
-                <h3 class="text-xl font-bold text-white">Arte Digital & Marca</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Identidade visual marcante, banners e criativos com um design agressivo e profissional.</p>
+            <div class="bg-elite-card border border-elite-border p-8 rounded-3xl space-y-5 hover:border-elite-gold/40 transition">
+                <div class="w-14 h-14 rounded-2xl bg-elite-gold/10 flex items-center justify-center text-elite-gold text-2xl font-bold animate-pulse">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">Foco em Vendas</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Estruturas desenhadas estrategicamente para guiar o visitante diretamente para o teu botão do WhatsApp.</p>
             </div>
         </div>
     </section>
 
     <!-- Rodapé Brutalista / CTA Final -->
-    <footer class="bg-black border-t border-brand-border py-24 px-6 text-center">
+    <footer class="bg-black border-t border-elite-border py-28 px-6 text-center">
         <div class="max-w-4xl mx-auto space-y-8">
-            <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight">Pronto para dominar o seu mercado?</h2>
-            <p class="text-gray-400 max-w-xl mx-auto text-base">Pare de perder clientes para concorrentes com sites fracos. Vamos construir algo lendário hoje mesmo.</p>
-            <div class="pt-2">
-                <a href="https://wa.me/5561981778756?text=Ol%C3%A1!%20Estou%20pronto%20para%20iniciar%20meu%20projeto%20com%20a%20Gringo." target="_blank" class="inline-flex items-center gap-3 bg-brand-gold text-black font-extrabold text-base px-10 py-5 rounded-2xl hover:bg-brand-lightGold transition shadow-2xl shadow-brand-gold/30">
-                    INICIAR PROJETOS NO WHATSAPP ↗
+            <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight">Pronto para assumir o topo?</h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-base">Deixe de lado os sites amadores. Vamos construir a ferramenta definitiva para escalar o seu negócio.</p>
+            <div class="pt-4">
+                <a href="https://wa.me/5561981778756?text=Estou%20pronto!%20Quero%20iniciar%20meu%20projeto%20com%20a%20Gringo%20agora." target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-elite-gold to-yellow-500 text-black font-extrabold text-base px-10 py-5 rounded-2xl hover:opacity-90 transition shadow-2xl shadow-elite-gold/30">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> INICIAR PROJETO NO WHATSAPP ↗
                 </a>
             </div>
-            <p class="text-xs text-gray-600 pt-12 tracking-wider">
+            <p class="text-xs text-gray-600 pt-16 tracking-wider">
                 © 2026 Gringo Design & Dev. Todos os direitos reservados. Hospedado via Netlify.
             </p>
         </div>
