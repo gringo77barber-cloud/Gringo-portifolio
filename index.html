@@ -92,7 +92,7 @@
             </a>
             
             <nav class="hidden lg:flex space-x-8 font-extrabold text-xs tracking-widest text-slate-200 uppercase">
-                <a href="#nichos" class="hover:text-neon-cyan transition flex items-center gap-1.5"><i class="fa-solid fa-store text-neon-gold text-[10px]"></i> Nichos</a>
+                <a href="#nichos" class="hover:text-neon-cyan transition flex items-center gap-1.5"><i class="fa-solid fa-store text-neon-gold text-[10px]"></i> Nichos de Trabalho</a>
                 <a href="#servicos" class="hover:text-neon-gold transition flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-neon-cyan text-[10px]"></i> Serviços</a>
                 <a href="#engenharia" class="hover:text-neon-pink transition flex items-center gap-1.5"><i class="fa-solid fa-code text-neon-pink text-[10px]"></i> Tecnologia</a>
             </nav>
@@ -127,20 +127,20 @@
         </div>
     </section>
 
-    <!-- Nichos de Mercado -->
+    <!-- Nichos de Mercado (Clique em Qualquer Cartão para Abrir Ficha Técnica) -->
     <section id="nichos" class="py-24 bg-dark-card/60 border-t border-dark-border px-6">
         <div class="max-w-7xl mx-auto space-y-16">
             <div class="text-center space-y-4 max-w-3xl mx-auto">
                 <span class="text-xs font-black uppercase tracking-widest text-neon-gold text-glow-gold flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-fire"></i> Soluções por Segmento
+                    <i class="fa-solid fa-fire"></i> Clique para Detalhes Completos
                 </span>
                 <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">Qual é o Seu Negócio?</h2>
-                <p class="text-slate-300 text-sm">Desenvolvemos a estrutura perfeita com tabela de preços, galeria de fotos, localização e agendamento direto pelo WhatsApp.</p>
+                <p class="text-slate-300 text-sm">Toque em qualquer card abaixo para abrir a aba explicativa do que criamos para o seu segmento.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Barbearia -->
-                <div class="bg-dark border border-neon-gold/50 rounded-3xl overflow-hidden group hover:border-neon-gold transition duration-500 glow-gold flex flex-col justify-between">
+                <div onclick="openDrawer('drawer-barbearia')" class="cursor-pointer bg-dark border border-neon-gold/50 rounded-3xl overflow-hidden group hover:border-neon-gold transition duration-500 glow-gold flex flex-col justify-between">
                     <div>
                         <div class="h-60 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1000&auto=format&fit=crop" alt="Site para Barbearia" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
@@ -149,16 +149,17 @@
                         </div>
                         <div class="p-7 space-y-3">
                             <h3 class="text-2xl font-black text-white">Barbearias & Barbershop</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed">Apresente os cortes, combos de barba, localização no mapa e botão direto de "Agendar Horário".</p>
+                            <p class="text-slate-400 text-xs leading-relaxed">Cortes, combos de barba, mapa de localização e botão "Agendar Horário".</p>
                         </div>
                     </div>
-                    <div class="p-7 pt-0">
-                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Barbearia." target="_blank" class="block text-center bg-neon-gold text-black font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">Quero para minha Barbearia ↗</a>
+                    <div class="p-7 pt-0 flex items-center justify-between text-xs font-black text-neon-gold uppercase">
+                        <span>Ver O Que Criamos ↗</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
                 <!-- Manicure -->
-                <div class="bg-dark border border-neon-pink/50 rounded-3xl overflow-hidden group hover:border-neon-pink transition duration-500 glow-pink flex flex-col justify-between">
+                <div onclick="openDrawer('drawer-manicure')" class="cursor-pointer bg-dark border border-neon-pink/50 rounded-3xl overflow-hidden group hover:border-neon-pink transition duration-500 glow-pink flex flex-col justify-between">
                     <div>
                         <div class="h-60 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1000&auto=format&fit=crop" alt="Site para Manicure" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
@@ -167,16 +168,17 @@
                         </div>
                         <div class="p-7 space-y-3">
                             <h3 class="text-2xl font-black text-white">Manicures & Nail Designers</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed">Galeria de fotos de Alongamentos, Gel, Fibra e Esmaltação com catálogo online completo.</p>
+                            <p class="text-slate-400 text-xs leading-relaxed">Alongamentos, Gel, Fibra e Esmaltação com catálogo online completo.</p>
                         </div>
                     </div>
-                    <div class="p-7 pt-0">
-                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Manicure." target="_blank" class="block text-center bg-neon-pink text-white font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">Quero para meu Espaço Nails ↗</a>
+                    <div class="p-7 pt-0 flex items-center justify-between text-xs font-black text-neon-pink uppercase">
+                        <span>Ver O Que Criamos ↗</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
                 <!-- Salão -->
-                <div class="bg-dark border border-neon-cyan/50 rounded-3xl overflow-hidden group hover:border-neon-cyan transition duration-500 glow-cyan flex flex-col justify-between">
+                <div onclick="openDrawer('drawer-salao')" class="cursor-pointer bg-dark border border-neon-cyan/50 rounded-3xl overflow-hidden group hover:border-neon-cyan transition duration-500 glow-cyan flex flex-col justify-between">
                     <div>
                         <div class="h-60 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop" alt="Site para Salão" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
@@ -185,16 +187,17 @@
                         </div>
                         <div class="p-7 space-y-3">
                             <h3 class="text-2xl font-black text-white">Salões de Beleza & Cabelo</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed">Destaque mechas, coloração, tratamentos capilares e depoimentos de clientes.</p>
+                            <p class="text-slate-400 text-xs leading-relaxed">Mechas, coloração, tratamentos capilares e depoimentos de clientes.</p>
                         </div>
                     </div>
-                    <div class="p-7 pt-0">
-                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Salao%20de%20Beleza." target="_blank" class="block text-center bg-neon-cyan text-black font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">Quero para meu Salão ↗</a>
+                    <div class="p-7 pt-0 flex items-center justify-between text-xs font-black text-neon-cyan uppercase">
+                        <span>Ver O Que Criamos ↗</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
                 <!-- Tattoo -->
-                <div class="bg-dark border border-neon-purple/50 rounded-3xl overflow-hidden group hover:border-neon-purple transition duration-500 glow-purple flex flex-col justify-between">
+                <div onclick="openDrawer('drawer-tattoo')" class="cursor-pointer bg-dark border border-neon-purple/50 rounded-3xl overflow-hidden group hover:border-neon-purple transition duration-500 glow-purple flex flex-col justify-between">
                     <div>
                         <div class="h-60 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?q=80&w=1000&auto=format&fit=crop" alt="Site para Tatuador" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
@@ -203,16 +206,17 @@
                         </div>
                         <div class="p-7 space-y-3">
                             <h3 class="text-2xl font-black text-white">Estúdios de Tatuagem</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed">Portfólio de artes em alta definição e formulário rápido de orçamento por arte.</p>
+                            <p class="text-slate-400 text-xs leading-relaxed">Portfólio de artes em HD e formulário rápido de orçamento por arte.</p>
                         </div>
                     </div>
-                    <div class="p-7 pt-0">
-                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Estudio%20de%20Tatuagem." target="_blank" class="block text-center bg-neon-purple text-white font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">Quero para meu Estúdio ↗</a>
+                    <div class="p-7 pt-0 flex items-center justify-between text-xs font-black text-neon-purple uppercase">
+                        <span>Ver O Que Criamos ↗</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
                 <!-- Gastronomia -->
-                <div class="bg-dark border border-neon-gold/50 rounded-3xl overflow-hidden group hover:border-neon-gold transition duration-500 glow-gold flex flex-col justify-between">
+                <div onclick="openDrawer('drawer-gastronomia')" class="cursor-pointer bg-dark border border-neon-gold/50 rounded-3xl overflow-hidden group hover:border-neon-gold transition duration-500 glow-gold flex flex-col justify-between">
                     <div>
                         <div class="h-60 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1000&auto=format&fit=crop" alt="Site para Hamburgueria" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
@@ -224,13 +228,14 @@
                             <p class="text-slate-400 text-xs leading-relaxed">Cardápio digital interativo com fotos suculentas e pedido direto no WhatsApp.</p>
                         </div>
                     </div>
-                    <div class="p-7 pt-0">
-                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Cardapio%20Hamburgueria." target="_blank" class="block text-center bg-neon-gold text-black font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">Quero Cardápio Digital ↗</a>
+                    <div class="p-7 pt-0 flex items-center justify-between text-xs font-black text-neon-gold uppercase">
+                        <span>Ver O Que Criamos ↗</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
 
                 <!-- Personal -->
-                <div class="bg-dark border border-neon-cyan/50 rounded-3xl overflow-hidden group hover:border-neon-cyan transition duration-500 glow-cyan flex flex-col justify-between">
+                <div onclick="openDrawer('drawer-personal')" class="cursor-pointer bg-dark border border-neon-cyan/50 rounded-3xl overflow-hidden group hover:border-neon-cyan transition duration-500 glow-cyan flex flex-col justify-between">
                     <div>
                         <div class="h-60 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop" alt="Site para Personal" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-85">
@@ -239,11 +244,12 @@
                         </div>
                         <div class="p-7 space-y-3">
                             <h3 class="text-2xl font-black text-white">Personal Trainer & Consultoria</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed">Apresentação profissional com plano de consultorias e resultados de alunos.</p>
+                            <p class="text-slate-400 text-xs leading-relaxed">Apresentação com plano de consultorias e resultados de alunos.</p>
                         </div>
                     </div>
-                    <div class="p-7 pt-0">
-                        <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20estilo%20Personal." target="_blank" class="block text-center bg-neon-cyan text-black font-black py-3 rounded-xl text-xs uppercase hover:opacity-90 transition">Quero para meus Serviços ↗</a>
+                    <div class="p-7 pt-0 flex items-center justify-between text-xs font-black text-neon-cyan uppercase">
+                        <span>Ver O Que Criamos ↗</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
             </div>
@@ -346,8 +352,116 @@
         </div>
     </footer>
 
-    <!-- DRAWER LATERAL SLIDE-OVER -->
+    <!-- DRAWER LATERAL SLIDE-OVER (ABAS EXPLICATIVAS PARA CADA NICHO DE TRABALHO) -->
     <div id="drawer-overlay" class="drawer-overlay fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex justify-end">
+        
+        <!-- Drawer Barbearia -->
+        <div id="drawer-barbearia" class="drawer-content hidden bg-dark-panel border-l border-neon-gold w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-gold font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-scissors"></i> Ficha Técnica do Projeto</span>
+                    <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h3 class="text-3xl font-black text-white">Site para Barbearia</h3>
+                <p class="text-slate-300 text-sm">Estrutura feita para agendar cortes e barbas em segundos.</p>
+                <div class="space-y-3 border-t border-dark-border pt-6 text-xs text-slate-300">
+                    <div class="flex justify-between"><span class="text-slate-400">Tabela de Preços:</span> <span class="font-bold text-white">Cortes, Barba, Pigmentação e Combos</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Agendamento:</span> <span class="font-bold text-neon-gold">Botão direto para o WhatsApp do Barbeiro</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Extras:</span> <span class="font-bold text-white">Mapa com Localização GPS e Horários de Funcionamento</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Prazo:</span> <span class="font-bold text-neon-gold">3 a 5 dias úteis</span></div>
+                </div>
+            </div>
+            <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20para%20Barbearia%20com%20o%20Nilson." target="_blank" class="block text-center bg-neon-gold text-black font-black py-4 rounded-xl uppercase text-xs">Pedir Orçamento Barbearia no WhatsApp</a>
+        </div>
+
+        <!-- Drawer Manicure -->
+        <div id="drawer-manicure" class="drawer-content hidden bg-dark-panel border-l border-neon-pink w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-pink font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-hand"></i> Ficha Técnica do Projeto</span>
+                    <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h3 class="text-3xl font-black text-white">Site para Manicure & Nails</h3>
+                <p class="text-slate-300 text-sm">Mostre a beleza e delicadeza dos seus trabalhos em alta qualidade.</p>
+                <div class="space-y-3 border-t border-dark-border pt-6 text-xs text-slate-300">
+                    <div class="flex justify-between"><span class="text-slate-400">Galeria Visual:</span> <span class="font-bold text-white">Catálogo de Gel, Fibra de Vidro e Banho de Gel</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Agendamento:</span> <span class="font-bold text-neon-pink">Reserva de Horários via WhatsApp</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Prazo:</span> <span class="font-bold text-white">3 a 5 dias úteis</span></div>
+                </div>
+            </div>
+            <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20para%20Manicure%20com%20o%20Nilson." target="_blank" class="block text-center bg-neon-pink text-white font-black py-4 rounded-xl uppercase text-xs">Pedir Orçamento Manicure no WhatsApp</a>
+        </div>
+
+        <!-- Drawer Salão -->
+        <div id="drawer-salao" class="drawer-content hidden bg-dark-panel border-l border-neon-cyan w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-cyan font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-scissors"></i> Ficha Técnica do Projeto</span>
+                    <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h3 class="text-3xl font-black text-white">Site para Salão de Beleza</h3>
+                <p class="text-slate-300 text-sm">Posicione o seu salão como referência na sua região.</p>
+                <div class="space-y-3 border-t border-dark-border pt-6 text-xs text-slate-300">
+                    <div class="flex justify-between"><span class="text-slate-400">Serviços:</span> <span class="font-bold text-white">Mechas, Coloração, Escova, Alisamento e Penteados</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Depoimentos:</span> <span class="font-bold text-neon-cyan">Avaliações reais de clientes satisfeitas</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Prazo:</span> <span class="font-bold text-white">3 a 7 dias úteis</span></div>
+                </div>
+            </div>
+            <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20para%20Salao%20com%20o%20Nilson." target="_blank" class="block text-center bg-neon-cyan text-black font-black py-4 rounded-xl uppercase text-xs">Pedir Orçamento Salão no WhatsApp</a>
+        </div>
+
+        <!-- Drawer Tattoo -->
+        <div id="drawer-tattoo" class="drawer-content hidden bg-dark-panel border-l border-neon-purple w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-purple font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-palette"></i> Ficha Técnica do Projeto</span>
+                    <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h3 class="text-3xl font-black text-white">Site para Estúdio de Tatuagem</h3>
+                <p class="text-slate-300 text-sm">Mostre o seu portfólio em altíssima definição e feche novos projetos.</p>
+                <div class="space-y-3 border-t border-dark-border pt-6 text-xs text-slate-300">
+                    <div class="flex justify-between"><span class="text-slate-400">Galeria HD:</span> <span class="font-bold text-white">Filtros por estilo (Realismo, Fine Line, Blackwork)</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Orçamento:</span> <span class="font-bold text-neon-purple">Formulário fácil de envio da ideia da tattoo no WhatsApp</span></div>
+                </div>
+            </div>
+            <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20para%20Estudio%20de%20Tattoo%20com%20o%20Nilson." target="_blank" class="block text-center bg-neon-purple text-white font-black py-4 rounded-xl uppercase text-xs">Pedir Orçamento Tattoo no WhatsApp</a>
+        </div>
+
+        <!-- Drawer Gastronomia -->
+        <div id="drawer-gastronomia" class="drawer-content hidden bg-dark-panel border-l border-neon-gold w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-gold font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-burger"></i> Ficha Técnica do Projeto</span>
+                    <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h3 class="text-3xl font-black text-white">Cardápio Digital para Lanchonete</h3>
+                <p class="text-slate-300 text-sm">Menu interativo para pedidos em tempo real diretamente na cozinha.</p>
+                <div class="space-y-3 border-t border-dark-border pt-6 text-xs text-slate-300">
+                    <div class="flex justify-between"><span class="text-slate-400">Cardápio:</span> <span class="font-bold text-white">Lanches, Bebidas, Combos e Sobremesas com fotos</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Pedidos:</span> <span class="font-bold text-neon-gold">Mensagem formatada com itens escolhidos no WhatsApp</span></div>
+                </div>
+            </div>
+            <a href="https://wa.me/5561981778756?text=Quero%20um%20Cardapio%20Digital%20com%20o%20Nilson." target="_blank" class="block text-center bg-neon-gold text-black font-black py-4 rounded-xl uppercase text-xs">Pedir Orçamento Cardápio no WhatsApp</a>
+        </div>
+
+        <!-- Drawer Personal -->
+        <div id="drawer-personal" class="drawer-content hidden bg-dark-panel border-l border-neon-cyan w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-dark-border pb-6">
+                    <span class="text-neon-cyan font-black text-xs uppercase tracking-widest"><i class="fa-solid fa-dumbbell"></i> Ficha Técnica do Projeto</span>
+                    <button onclick="closeDrawers()" class="text-slate-400 hover:text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h3 class="text-3xl font-black text-white">Site para Personal Trainer</h3>
+                <p class="text-slate-300 text-sm">Página para vender consultoria online e treinos presenciais.</p>
+                <div class="space-y-3 border-t border-dark-border pt-6 text-xs text-slate-300">
+                    <div class="flex justify-between"><span class="text-slate-400">Apresentação:</span> <span class="font-bold text-white">Planos Mensais, Trimestrais e Antes/Depois de Alunos</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">Contato:</span> <span class="font-bold text-neon-cyan">Agendamento de Avaliação Física no WhatsApp</span></div>
+                </div>
+            </div>
+            <a href="https://wa.me/5561981778756?text=Quero%20um%20site%20para%20Personal%20com%20o%20Nilson." target="_blank" class="block text-center bg-neon-cyan text-black font-black py-4 rounded-xl uppercase text-xs">Pedir Orçamento Personal no WhatsApp</a>
+        </div>
+
+        <!-- Drawers Principais de Serviços -->
         <div id="drawer-web" class="drawer-content hidden bg-dark-panel border-l border-neon-gold w-full max-w-xl h-full p-10 overflow-y-auto space-y-8 flex-col justify-between">
             <div class="space-y-6">
                 <div class="flex items-center justify-between border-b border-dark-border pb-6">
@@ -387,6 +501,7 @@
             </div>
             <a href="https://wa.me/5561981778756?text=Quero%20or%C3%A7amento%20de%20Logo/Design%20com%20o%20Nilson." target="_blank" class="block text-center bg-neon-cyan text-black font-black py-4 rounded-xl uppercase text-xs">Chamar no WhatsApp</a>
         </div>
+
     </div>
 
     <!-- JavaScript para Drawers -->
